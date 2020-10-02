@@ -19,6 +19,7 @@ from clint.textui import progress
 from ecapture import ecapture as ec 
 from bs4 import BeautifulSoup 
 import win32com.client as wincl 
+import numpy as np
 from urllib.request import urlopen 
 engine = pyttsx3.init('sapi5') 
 voices = engine.getProperty('voices') 
@@ -41,7 +42,7 @@ def usrname():
     speak(uname) 
     columns = shutil.get_terminal_size().columns 
     print("Welcome", uname.center(columns)) 
-    speak("How can i Help you dear") 
+    speak("How can i Help you dear, I am your assistant") 
 
 def takeCommand(): 
     
@@ -117,7 +118,7 @@ if __name__ == '__main__':
                 speak("Email has been sent !") 
             except Exception as e: 
                 print(e) 
-                speak("Sorry, I am not able to send this email") 
+                speak("I am not able to send this email -Really sorry ") 
 
         elif 'how are you' or 'how u doing' in response: 
             speak("I am fine, Thank you") 
